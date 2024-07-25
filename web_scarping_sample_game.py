@@ -24,7 +24,7 @@ data = {
     "Link": link
 }
 i = range(len(quote))
-chance = 3
+chance = 2
 rand = (random.choice(i))
 print(quote[rand])
 #This is a sample game that some one guess the author of the quote the qoute get from https://quotes.toscrape.com/
@@ -34,7 +34,7 @@ while chance >0:
         print("Correct")
     else:
         chance-=1
-        if chance==2:
+        if chance==1:
             new_req = requests.get(link[rand]).text
             soup1 = BeautifulSoup(new_req,"html.parser")
             brith = soup1.find("span", class_="author-born-date").text
@@ -42,6 +42,8 @@ while chance >0:
             print(f"Hint:)\n The birth year is {brith}\nThe birth location is{location}")
             if ans == author[rand]:
                 print("Correct")
+            else:
+                print("Try again later!")
 
 
 
