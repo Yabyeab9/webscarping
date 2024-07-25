@@ -27,6 +27,7 @@ i = range(len(quote))
 chance = 3
 rand = (random.choice(i))
 print(quote[rand])
+#This is a sample game that some one guess the author of the quote the qoute get from https://quotes.toscrape.com/
 ans = input("Enter the author of the above quote:  ")
 while chance >0:
     if ans==author[rand]:
